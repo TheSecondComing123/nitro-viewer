@@ -25,7 +25,12 @@ function loadComic(){
     preloadImage(2, 1, 1);
 }
 function preloadImage(part, chapter, comic){
-    if(part <= 0 || part > parts.length || chapter <= 0 || chapter > parts[part - 1].length || comic <= 0 || comic > parts[part - 1]?.[chapter - 1]?.length) return;
+    if(part <= 0 
+       || part > parts.length 
+       || chapter <= 0 
+       || chapter > parts[part - 1].length 
+       || comic <= 0 
+       || comic > parts[part - 1]?.[chapter - 1]?.length) return;  // nothing to show
     let url = `comics/p${part}/c${chapter}/${comic}.png`;
     if(!images.find(value => value.src == 'https://se-nitro.surge.sh/' + url)){
         let img = new Image();
